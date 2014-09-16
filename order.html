@@ -1,149 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="vcs">
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/angular.min.js" ng-csp></script>
 </head>
 
 <body>
     <h1 align="center">VCS</h1>
-    <div class="bs-example">
-<form class="form-horizontal">
-<fieldset>
+    <div>
+        <form ng-controller="orderController as order" class="form-horizontal">
+            <fieldset>
 
-<!-- Form Name -->
-<legend>Order details</legend>
+                <!-- Form Name -->
+                <legend>Order details</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="nameinput">Name</label>  
-  <div class="col-md-4">
-  <input id="nameinput" name="nameinput" type="text" placeholder="enter name..." class="form-control input-md">
-    
-  </div>
-</div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nameinput">Name</label>
+                    <div class="col-md-4">
+                        <input id="nameinput" name="nameinput" type="text" placeholder="enter name..." class="form-control input-md" ng-model="order.name">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="deliverydateinput">Delivery Date</label>  
-  <div class="col-md-4">
-  <input id="deliverydateinput" name="deliverydateinput" type="text" placeholder="enter delivery date..." class="form-control input-md date">
-    
-  </div>
-</div>
+                    </div>
+                </div>
 
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="addressinput">Address</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="addressinput" name="addressinput"></textarea>
-  </div>
-</div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="deliverydateinput">Delivery Date</label>
+                    <div class="col-md-4">
+                        <input id="deliverydateinput" name="deliverydateinput" type="text" placeholder="enter delivery date..." class="form-control input-md date" ng-model="order.deliveryDate">
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="quantityinput">Quantity</label>  
-  <div class="col-md-4">
-  <input id="quantityinput" name="quantityinput" type="number" placeholder="" class="form-control input-md">
-    
-  </div>
-</div>
+                    </div>
+                </div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="menuinput">Menu</label>
-  <div class="col-md-4">
-    <select id="menuinput" name="menuinput" class="form-control">
-      <option value="Breakfast">Breakfast</option>
-      <option value="Lunch">Lunch</option>
-      <option value="Dinner">Dinner</option>
-    </select>
-  </div>
-</div>
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="addressinput">Address</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="addressinput" name="addressinput" ng-model="order.address"></textarea>
+                    </div>
+                </div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="menutypeinput">Menu Type</label>
-  <div class="col-md-4">
-    <select id="menutypeinput" name="menutypeinput" class="form-control">
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-    </select>
-  </div>
-</div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="quantityinput">Quantity</label>
+                    <div class="col-md-4">
+                        <input id="quantityinput" name="quantityinput" type="number" placeholder="" class="form-control input-md" ng-model="order.quantity">
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="priceinput">Price per meal</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">Rs</span>
-      <input id="priceinput" name="priceinput" class="form-control" placeholder="" type="number">
-    </div>
-    
-  </div>
-</div>
+                    </div>
+                </div>
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="deliverychargeinput">Delivery Charge</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">Rs</span>
-      <input id="deliverychargeinput" name="deliverychargeinput" class="form-control" placeholder="" type="number">
-    </div>
-    
-  </div>
-</div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="menuinput">Menu</label>
+                    <div class="col-md-4">
+                        <select id="menuinput" name="menuinput" class="form-control" ng-model="order.menu">
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                        </select>
+                    </div>
+                </div>
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="totalinput">Total</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">Rs</span>
-      <input id="totalinput" name="totalinput" class="form-control" placeholder="" type="number">
-    </div>
-    
-  </div>
-</div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="menutypeinput">Menu Type</label>
+                    <div class="col-md-4">
+                        <select id="menutypeinput" name="menutypeinput" class="form-control" ng-model="order.menutype">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                </div>
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="advanceinput">Advance</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">Rs</span>
-      <input id="advanceinput" name="advanceinput" class="form-control" placeholder="" type="number">
-    </div>
-    
-  </div>
-</div>
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="priceinput">Price per meal</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Rs</span>
+                            <input id="priceinput" name="priceinput" class="form-control" placeholder="" min="0" type="number" ng-model="order.price" ng-change="recalculate()">
+                        </div>
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="balanceinput">Balance</label>
-  <div class="col-md-4">
-    <div class="input-group">
-      <span class="input-group-addon">Rs</span>
-      <input id="balanceinput" name="balanceinput" class="form-control" placeholder="" type="number">
-    </div>
-    
-  </div>
-</div>
+                    </div>
+                </div>
 
-</fieldset>
-</form>
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="deliverychargeinput">Delivery Charge</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Rs</span>
+                            <input id="deliverychargeinput" name="deliverychargeinput" class="form-control" min="0" placeholder="" type="number" ng-model="order.deliveryCharge" ng-change="recalculate()">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="totalinput">Total</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Rs</span>
+                            <input id="totalinput" name="totalinput" class="form-control" placeholder="" type="number" disabled="disabled" value="{{order.total}}">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="advanceinput">Advance</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Rs</span>
+                            <input id="advanceinput" name="advanceinput" class="form-control" placeholder="" type="number" ng-model="order.advance" ng-change="recalculate()">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Prepended text-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="balanceinput">Balance</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">Rs</span>
+                            <input id="balanceinput" name="balanceinput" class="form-control" placeholder="" type="number" disabled="disabled" value="{{order.balance}}">
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="clearbutton"></label>
+                    <div class="col-md-8">
+                        <button id="clearbutton" name="clearbutton" class="btn btn-default" ng-click="clearValues()">clear</button>
+                        <button id="confirmbutton" name="confirmbutton" class="btn btn-success" ng-click="submit()">Confirm</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
 
     </div>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
