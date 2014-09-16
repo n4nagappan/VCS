@@ -12,3 +12,7 @@ Download App here :
 Install
 =======
 Open **chrome://chrome/extensions/** in a new tab and drag and drop the downloaded crx file
+
+Progress
+========
+[https://trello.com/b/CExY6znc/vcs-billing-app](https://trello.com/b/CExY6znc/vcs-billing-app)
