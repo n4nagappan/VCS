@@ -11,4 +11,4 @@ Download App here :
 
 Install
 =======
-open chrome://chrome/extensions/ in a new tab and drag and drop the downloaded crx file
+Open chrome://chrome/extensions/ in a new tab and drag and drop the downloaded crx file
