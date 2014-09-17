@@ -2,14 +2,22 @@
 <html ng-app="vcs">
 
 <head>
-    <link type="text/css" href="css/bootstrap.min.css" />
-    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/angular.min.js" ng-csp></script>
 </head>
 
 <body>
-    <h1 align="center">Hello, world!</h1>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        </div>
+    </div>
+    <order-page></order-page>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/main.js"></script>
     <script src="js/app.js"></script>
 </body>

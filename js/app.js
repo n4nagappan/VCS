@@ -31,4 +31,11 @@
             };
         }
     ]);
+    
+    app.directive('orderPage',function(){
+        return {
+            restrict:"E",
+            templateUrl:"order.html"
+        };
+    });
 })();
