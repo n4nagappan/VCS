@@ -31,11 +31,11 @@
             };
         }
     ]);
-    
-    app.directive('orderPage',function(){
+
+    app.directive('orderPage', function() {
         return {
-            restrict:"E",
-            templateUrl:"order.html"
+            restrict: "E",
+            templateUrl: "order.html"
         };
     });
 })();

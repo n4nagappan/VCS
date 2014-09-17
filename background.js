@@ -2,7 +2,7 @@
 chrome.app.runtime.onLaunched.addListener(function() {
   chrome.app.window.create('vcs.html', {
     bounds: {
-      'width': 600,
+      'width': 800,
       'height': Math.round(window.screen.availHeight)
     },
     frame: 'none'
