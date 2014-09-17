@@ -12,7 +12,7 @@
 <body>
     <h1 align="center">VCS</h1>
     <div>
-        <form ng-controller="orderController as order" class="form-horizontal">
+        <form name="orderForm" ng-controller="orderController as order" class="form-horizontal" novalidate>
             <fieldset>
 
                 <!-- Form Name -->
@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="nameinput">Name</label>
                     <div class="col-md-4">
-                        <input id="nameinput" name="nameinput" type="text" placeholder="enter name..." class="form-control input-md" ng-model="order.name">
+                        <input id="nameinput" name="nameinput" type="text" placeholder="enter name..." class="form-control input-md" ng-model="order.name" required>
 
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="deliverydateinput">Delivery Date</label>
                     <div class="col-md-4">
-                        <input id="deliverydateinput" name="deliverydateinput" type="text" placeholder="enter delivery date..." class="form-control input-md date" ng-model="order.deliveryDate">
+                        <input id="deliverydateinput" name="deliverydateinput" type="text" placeholder="enter delivery date..." class="form-control input-md date" ng-model="order.deliveryDate" required>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="addressinput">Address</label>
                     <div class="col-md-4">
-                        <textarea class="form-control" id="addressinput" name="addressinput" ng-model="order.address"></textarea>
+                        <textarea class="form-control" id="addressinput" name="addressinput" ng-model="order.address" required></textarea>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="quantityinput">Quantity</label>
                     <div class="col-md-4">
-                        <input id="quantityinput" name="quantityinput" type="number" placeholder="" class="form-control input-md" ng-model="order.quantity">
+                        <input id="quantityinput" name="quantityinput" type="number" placeholder="" class="form-control input-md" ng-model="order.quantity" required>
 
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="menuinput">Menu</label>
                     <div class="col-md-4">
-                        <select id="menuinput" name="menuinput" class="form-control" ng-model="order.menu">
+                        <select id="menuinput" name="menuinput" class="form-control" ng-model="order.menu" required>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="menutypeinput">Menu Type</label>
                     <div class="col-md-4">
-                        <select id="menutypeinput" name="menutypeinput" class="form-control" ng-model="order.menutype">
+                        <select id="menutypeinput" name="menutypeinput" class="form-control" ng-model="order.menutype" required>
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="C">C</option>
@@ -82,7 +82,7 @@
                     <div class="col-md-4">
                         <div class="input-group">
                             <span class="input-group-addon">Rs</span>
-                            <input id="priceinput" name="priceinput" class="form-control" placeholder="" min="0" type="number" ng-model="order.price" ng-change="recalculate()">
+                            <input id="priceinput" name="priceinput" class="form-control" placeholder="" min="0" type="number" ng-model="order.price" ng-change="recalculate()" required>
                         </div>
 
                     </div>
@@ -94,7 +94,7 @@
                     <div class="col-md-4">
                         <div class="input-group">
                             <span class="input-group-addon">Rs</span>
-                            <input id="deliverychargeinput" name="deliverychargeinput" class="form-control" min="0" placeholder="" type="number" ng-model="order.deliveryCharge" ng-change="recalculate()">
+                            <input id="deliverychargeinput" name="deliverychargeinput" class="form-control" min="0" placeholder="" type="number" ng-model="order.deliveryCharge" ng-change="recalculate()" required>
                         </div>
 
                     </div>
@@ -118,7 +118,7 @@
                     <div class="col-md-4">
                         <div class="input-group">
                             <span class="input-group-addon">Rs</span>
-                            <input id="advanceinput" name="advanceinput" class="form-control" placeholder="" type="number" ng-model="order.advance" ng-change="recalculate()">
+                            <input id="advanceinput" name="advanceinput" class="form-control" placeholder="" type="number" ng-model="order.advance" ng-change="recalculate()" required>
                         </div>
 
                     </div>
@@ -140,7 +140,7 @@
                     <label class="col-md-4 control-label" for="clearbutton"></label>
                     <div class="col-md-8">
                         <button id="clearbutton" name="clearbutton" class="btn btn-default" ng-click="clearValues()">clear</button>
-                        <button id="confirmbutton" name="confirmbutton" class="btn btn-success" ng-click="submit()">Confirm</button>
+                        <button id="confirmbutton" name="confirmbutton" class="btn btn-success" ng-click="orderForm.$valid && submit()">Confirm</button>
                     </div>
                 </div>
 

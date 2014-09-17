@@ -2,3 +2,11 @@ body {
     padding-left: 60px;
     padding-right: 60px;
   }
+
+.ng-dirty.ng-invalid{
+    border-color: red;
+}
+
+.ng-dirty.ng-valid{
+    border-color: green;
+}
