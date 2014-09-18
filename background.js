@@ -4,7 +4,6 @@ chrome.app.runtime.onLaunched.addListener(function() {
     bounds: {
       'width': 800,
       'height': Math.round(window.screen.availHeight)
-    },
-    frame: 'none'
+    }
   });
 });

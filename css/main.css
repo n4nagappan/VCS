@@ -11,10 +11,12 @@ body {
 .ng-dirty.ng-valid{
     border-color: green;
 }
+
 #titlebar {
     -webkit-app-region: drag
 }
 
-.navbar-right {
-   padding-right: 15px;
+.navbar-brand {
+    color: #760000 !important;
 }
+
