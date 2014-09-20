@@ -3,7 +3,7 @@
     // move it to vcs.html 
     var app = angular.module('vcs', []);
     app.controller('navController', function() {
-        this.currentMenu = "Home";
+        this.currentMenu = "newOrder";
 
         this.setMenu = function(menuItem) {
             this.currentMenu = menuItem;
@@ -11,7 +11,7 @@
 
         this.isCurrentMenu = function(menuItem) {
             var b = (this.currentMenu === menuItem);
-            console.log(b);
+            //console.log(b);
             return b;
         };
     });
@@ -21,7 +21,7 @@
             restrict: "E",
             templateUrl: "views/order.html",
             scope: {},
-            link: function($scope, $element , attr ) {
+            link: function($scope, $element, attr) {
                 $scope.order = {};
 
                 $('.date').datepicker({
@@ -29,8 +29,11 @@
                     format: "dd/mm/yy"
                 }).on("changeDate", function(e) {
                     console.log(e);
-                    console.log($(this).val());
-                    $(this).trigger('input');
+                    $scope.$apply(function() {
+                        // perform any model changes or method invocations here on angular app.
+                        //console.log(e.date);
+                        $scope.order.deliveryDate = e.date;
+                    });
                 });
 
                 $scope.submit = function() {
