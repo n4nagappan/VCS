@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="vcs">
+<html ng-app="vcs" ng-csp>
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/angular-csp.css" />
     <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script src="js/angular.min.js" ng-csp></script>
 </head>
 
-<body>
+<body ng-controller="navController as nav">
     <nav id="titlebar" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -25,22 +26,27 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Order<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">New Order</a></li>
-                            <li><a href="#">Show Orders</a></li>
+                            <li><a href="#" ng-click="nav.setMenu('newOrder')">New Order</a>
+                            </li>
+                            <li><a href="#" ng-click="nav.setMenu('showOrder')">Show Orders</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedule<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Daily</a></li>
-                            <li><a href="#">Weekly</a></li>
-                            <li><a href="#">Monthly</a></li>
+                            <li><a href="#" ng-click="nav.setMenu('daily')">Daily</a>
+                            </li>
+                            <li><a href="#" ng-click="nav.setMenu('weekly')">Weekly</a>
+                            </li>
+                            <li><a href="#" ng-click="nav.setMenu('monthly')">Monthly</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <order-page></order-page>
+    <order-page ng-show="nav.isCurrentMenu('newOrder')"></order-page>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
