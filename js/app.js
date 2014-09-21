@@ -2,6 +2,7 @@
     // Currently ng-app declared in order.html 
     // move it to vcs.html 
     var app = angular.module('vcs', []);
+    vcs.indexedDB.open();
     app.controller('navController', function() {
         this.currentMenu = "newOrder";
 
@@ -39,6 +40,7 @@
                 $scope.submit = function() {
                     console.log($scope.order);
                     console.log($scope.order.deliveryDate);
+                    vcs.indexedDB.addOrder($scope.order);
                 };
 
                 $scope.recalculate = function() {
