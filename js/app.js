@@ -33,7 +33,7 @@
 //                    "total": 1320,
 //                    "balance": 820,
 //                    "menu": "Lunch",
-//                    "menutype": "A",
+//                    "menuType": "A",
 //                    "price": 60,
 //                    "deliveryCharge": 120,
 //                    "advance": 500,
@@ -71,6 +71,17 @@
                     $scope.order = {};
                 };
             }
+        };
+    });
+    app.directive('itemList', function() {
+        return {
+            restrict: "E",
+            templateUrl: "views/items.html",
+            scope: false,
+            link: function($scope, $element, attr) {
+                console.log("itemList : inheriting from menu parent - " + JSON.stringify($scope.order));
+            }
+
         };
     });
 })();

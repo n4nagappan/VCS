@@ -1,3 +1,7 @@
+html {
+  overflow: auto;
+}
+
 body {
     padding-left: 60px;
     padding-right: 60px;
@@ -20,3 +24,7 @@ body {
     color: #760000 !important;
 }
 
+
+.list-group-item {
+    text-align: center
+}
