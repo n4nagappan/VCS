@@ -41,6 +41,7 @@
 //                    "deliveryDate": new Date("11/09/14")
 //                };
 
+                // Datepicker reference : http://bootstrap-datepicker.readthedocs.org/en/release/
                 $('.date').datepicker({
                     autoclose: true,
                     format: "dd/mm/yy"

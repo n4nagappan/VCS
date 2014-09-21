@@ -1,3 +1,6 @@
+// Debugging IndexedDB : http://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage.html
+// Resource tab in the chrome dev tools can be used for viewing records
+
 var vcs = vcs || {};
 vcs.indexedDB = {};
 vcs.indexedDB.db = null;
@@ -37,6 +40,7 @@ vcs.indexedDB.addOrder = function(order){
     var request = store.put(order);
     
     trans.oncomplete = function(e){
+        console.log("Added order to the db successfully");
         vcs.indexedDB.getAllOrders();
     };
     
