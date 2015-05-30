@@ -1,30 +1,50 @@
-html {
-  overflow: auto;
+html{
+    overflow-y: scroll;
+    margin: 10px;
+}
+.body{
+    margin: 10px;
 }
 
-body {
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 70px;
+td,th {
+    height: 45px;
+    padding: 4px 8px;
 }
 
-.ng-dirty.ng-invalid{
-    border-color: red;
+.table-editable {
+  position: relative;
+}
+.table-editable .glyphicon {
+  font-size: 20px;
 }
 
-.ng-dirty.ng-valid{
-    border-color: green;
+.table-remove {
+  color: #700;
+  cursor: pointer;
+}
+.table-remove:hover {
+  color: #f00;
 }
 
-#titlebar {
-    -webkit-app-region: drag
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+}
+.table-up:hover, .table-down:hover {
+  color: #00f;
 }
 
-.navbar-brand {
-    color: #760000 !important;
+.table-add {
+  color: #070;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.table-add:hover {
+  color: #0b0;
 }
 
-
-.list-group-item {
-    text-align: center
+.menulist {
+    border: 0px;
 }

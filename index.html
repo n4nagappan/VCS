@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-editable.css">
+    <script src="js/bootstrap-editable.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/items.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="orderInput" >
+        <form id="orderForm" class="form-horizontal" style="margin:20px">
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Name</label>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" id="inputName" name="name" placeholder="enter name">
+                </div>
+                <label class="control-label col-xs-2">Date</label>
+                <div class="col-xs-2">
+                    <input type="date" class="form-control" id="inputDate" name="date" placeholder="enter date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Phone number</label>
+                <div class="col-xs-4">
+                    <input type="number" class="form-control" id="inputPhone" name="phone" placeholder="enter number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Address</label>
+                <div class="col-xs-4">
+                    <textarea class="form-control" rows="3" id="inputAddress" name="address" placeholder="enter address"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Quantity</label>
+                <div class="col-xs-4">
+                    <input type="number" class="form-control" id="inputQuantity" name="quantity" placeholder="0">
+                </div>
+                <label class="control-label col-xs-2">Price/meal</label>
+                <div class="col-xs-2">
+                    <input type="number" class="form-control" id="inputPricePerMeal" name="pricePerMeal" placeholder="0.00">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Menu</label>
+                <div class="col-xs-4">
+                    <select id="menu" name="menu" class="form-control">
+                        <option value=""></option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                    </select>
+                </div>
+                <label class="control-label col-xs-2">Combo</label>
+                <div class="col-xs-2">
+                    <select id="combo" name="combo" class="form-control">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div id="table" class="row table-editable">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-8">
+<!--                    <span class="table-add glyphicon glyphicon-plus"></span>-->
+                    <table class="table">
+                        <tr>
+                            <th>Menu Items</th>
+                            <th></th>
+                        </tr>
+                        <!-- This is our clonable table line -->
+                        <tr class="hide">
+                            <td><span class="menulist" id="col1" name="itemName"></span>
+                            </td>
+                            <td><span class="menulist" id="col2" name="itemName"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Delivery</label>
+                <div class="col-xs-2">
+                    <input type="number" class="form-control" id="inputDelivery" placeholder=0.00>
+                </div>
+                <label class="control-label col-xs-2">Total</label>
+                <div class="col-xs-2">
+                    <input type="number" class="form-control" id="inputTotal" placeholder=0.00>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-xs-2">Advance</label>
+                <div class="col-xs-2">
+                    <input type="number" name="advance" class="form-control" id="inputAdvance" placeholder="">
+                </div>
+                <label class="control-label col-xs-2">Balance</label>
+                <div class="col-xs-2">
+                    <input type="number" name="balance" class="form-control" id="inputBalance" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2">Note</label>
+                <div class="col-xs-8">
+                    <textarea class="form-control" rows="1" id="inputNote" placeholder="enter note"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="orderConfirmed" style="display: none;">
+        <div class="row">
+            <div class="col-xs-6 col-centered">
+                <button class="btn btn-primary" id="backButton">back</button>
+                <button class="btn btn-primary" id="printButton">print</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div id="format1" class="col-xs-6 col-centered " ></div>
+          <div id="format2" class="col-xs-6 col-centered " ></div>
+        </div>
+    </div>
+</body>
+
+</html>
